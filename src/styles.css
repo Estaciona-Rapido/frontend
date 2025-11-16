@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('assets/fonts/NotoSans/NotoSans-Regular.ttf') format('truetype');
+    font-weight:normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('assets/fonts/NotoSans/NotoSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+:root {
+    --orange-1: #FCB500;
+    --orange-2: #E9A700;
+    --dark-orange-1: #9B6E00;
+    --light-light-beige-1: #FFFFF0;
+    --light-beige-1: #FFFFE2;
+    --beige-1: #E6E6CC;
+    --yellow-1: #FFFF96;
+    --rose-1: #FFE6C6;
+}
+
+.gigant-text {
+    font-size: 100px;
+}
+
+.big-text {
+    font-size: 70px;
+}
+
+.medium-text {
+    font-size: 40px;
+}
+
+.small-text {
+    font-size: 25px;
+}
+
+.tiny-text {
+    font-size: 20px;
+}

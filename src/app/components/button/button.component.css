@@ -1,0 +1,32 @@
+button {
+    border: none;
+    padding: 12px 50px;
+    text-align: center;
+    /* text-decoration: none; */
+    display: inline-block;
+    font-family: "Noto Sans";
+    margin: 4px 2px;
+    border-radius: 50px;
+}
+
+button.positive {
+    color: black;
+    background-color: var(--orange-1);
+    border: 1px solid black;
+}
+
+
+button.positive:hover {
+    background-color: var(--orange-2);
+}
+
+button.negative {
+    color: var(--dark-orange-1);
+    background-color: var(--light-beige-1);
+    border: 5px solid var(--orange-2);
+}
+
+
+button.negative:hover {
+    background-color: var(--beige-1);
+}
