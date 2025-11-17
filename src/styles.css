@@ -15,6 +15,7 @@
 }
 
 :root {
+    /*colors: */
     --orange-1: #FCB500;
     --orange-2: #E9A700;
     --dark-orange-1: #9B6E00;
@@ -23,24 +24,10 @@
     --beige-1: #E6E6CC;
     --yellow-1: #FFFF96;
     --rose-1: #FFE6C6;
-}
-
-.gigant-text {
-    font-size: 100px;
-}
-
-.big-text {
-    font-size: 70px;
-}
-
-.medium-text {
-    font-size: 40px;
-}
-
-.small-text {
-    font-size: 25px;
-}
-
-.tiny-text {
-    font-size: 20px;
+    /*text sizes: */
+    --gigant-text: 100px;
+    --big-text: 70px;
+    --medium-text: 40px;
+    --small-text: 25px;
+    --tiny-text: 20px;
 }

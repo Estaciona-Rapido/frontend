@@ -1,22 +1,23 @@
 button {
     border: none;
-    padding: 12px 50px;
     text-align: center;
-    /* text-decoration: none; */
     display: inline-block;
     font-family: "Noto Sans";
+    width: 295px;
     margin: 4px 2px;
     border-radius: 50px;
-}
-
-button.positive {
+    box-shadow: 5px 5px 5px rgb(0,0,0,0.25);
+    /*positive (default) variation */
     color: black;
     background-color: var(--orange-1);
     border: 1px solid black;
+    font-size: var(--small-text);
+    padding: 18px 0px;
 }
 
-
-button.positive:hover {
+/*positive (default) variation in hover: */
+button:hover {
+    width: 609 px;
     background-color: var(--orange-2);
 }
 
@@ -26,7 +27,7 @@ button.negative {
     border: 5px solid var(--orange-2);
 }
 
-
 button.negative:hover {
     background-color: var(--beige-1);
 }
+
