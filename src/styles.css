@@ -2,16 +2,21 @@
 
 @font-face {
     font-family: 'Noto Sans';
-    src: url('assets/fonts/NotoSans/NotoSans-Regular.ttf') format('truetype');
+    src: url('assets/3rd-party/fonts/NotoSans/NotoSans-Regular.ttf') format('truetype');
     font-weight:normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Noto Sans';
-    src: url('assets/fonts/NotoSans/NotoSans-Bold.ttf') format('truetype');
+    src: url('assets/3rd-party/fonts/NotoSans/NotoSans-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
+}
+
+body {
+    font-family: "Noto Sans";
+    margin: 0;
 }
 
 :root {

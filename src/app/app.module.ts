@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ButtonComponent } from './components/button/button.component';
 import { TextInputFieldComponent } from './components/text-input-field/text-input-field.component';
+import { MenuOptionComponent } from './components/menu-option/menu-option.component';
+import { UserHeaderComponent } from './components/user-header/user-header.component';
+import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ButtonComponent,
-    TextInputFieldComponent
+    TextInputFieldComponent,
+    MenuOptionComponent,
+    UserHeaderComponent,
+    AdminHeaderComponent
   ],
   imports: [
     BrowserModule,

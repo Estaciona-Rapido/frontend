@@ -1,0 +1,11 @@
+button {
+    display: block;
+    width: 270px;
+    height: 70px;
+    border-radius: 0%;
+    background-color: var(--rose-1);
+    border: 1px solid black;
+    color: black;
+    font-size: var(--small-text);
+    margin: 0;
+}
