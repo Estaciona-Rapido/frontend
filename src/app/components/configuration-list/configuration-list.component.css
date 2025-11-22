@@ -1,0 +1,30 @@
+.panel {
+    width: 810px;
+    height: 453px;
+    background-color: var(--light-light-beige-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 20px;
+    box-shadow: 0px 2px 18.3px 1px rgb(0, 0, 0, 0.25);
+}
+
+.panel > * {
+    margin: 0px;
+}
+
+.internal-window {
+    width: 678px;
+    height: 260px;
+    background-color: white;
+    border: 1px solid black;
+    justify-items: center;
+    justify-content: center;
+}
+
+h3 {
+    font-size: var(--small-text);
+}

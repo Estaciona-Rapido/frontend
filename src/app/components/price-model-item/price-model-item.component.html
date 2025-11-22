@@ -1,0 +1,15 @@
+<section>
+    <div class="checkbox">
+        <input type="checkbox">
+    </div>
+    <div class="info">
+        <input id="price-model-name" [disabled]="isEditing" [style]="editingStyle" [value]="">
+        <input id="price-model-frequency" type="number" [disabled]="isEditing" [style]="editingStyle" [value]="">
+        <input id="price-model-period" [disabled]="isEditing" [style]="editingStyle" [value]="">
+        <input id="price-model-cost" [disabled]="isEditing" [style]="editingStyle" [value]="">
+    </div>
+    <div class="actions">
+        <img id="edit-option" src="../../../assets/3rd-party/images/edit.png" (click)="changeToEditMode();">
+        <img id="delete-option" src="../../../assets/3rd-party/images/delete.png" onclick="alert('TODO');">
+    </div>
+</section>

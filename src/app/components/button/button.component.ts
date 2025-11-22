@@ -7,8 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
   @Input() label: string = "";
-  /**positive or negative variants avaliable. Defaults to positive */
-  @Input() variation: string = "positive";
+  /**positive, secundary and tertiary variants avaliable. Defaults to positive */
+  @Input() variation: string = "primary";
   constructor() { }
 
   ngOnInit(): void {

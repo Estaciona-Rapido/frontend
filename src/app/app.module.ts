@@ -10,6 +10,8 @@ import { MenuOptionComponent } from './components/menu-option/menu-option.compon
 import { UserHeaderComponent } from './components/user-header/user-header.component';
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
 import { BusinessHourItemComponent } from './components/business-hour-item/business-hour-item.component';
+import { ConfigurationListComponent } from './components/configuration-list/configuration-list.component';
+import { PriceModelItemComponent } from './components/price-model-item/price-model-item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { BusinessHourItemComponent } from './components/business-hour-item/busin
     MenuOptionComponent,
     UserHeaderComponent,
     AdminHeaderComponent,
-    BusinessHourItemComponent
+    BusinessHourItemComponent,
+    ConfigurationListComponent,
+    PriceModelItemComponent
   ],
   imports: [
     BrowserModule,

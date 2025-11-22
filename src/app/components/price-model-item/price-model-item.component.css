@@ -34,19 +34,16 @@ section * {
 }
 
 
-.info div {
+.info > div {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-#start-week, #end-week {
-    width: 90px;
-}
-
 .info input {
     border: 0;
     background-color: transparent;
+    width: 90px;
 }
 
 .actions img {

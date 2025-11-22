@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-business-hour-item',
-  templateUrl: './business-hour-item.component.html',
-  styleUrls: ['./business-hour-item.component.css']
+  selector: 'app-price-model-item',
+  templateUrl: './price-model-item.component.html',
+  styleUrls: ['./price-model-item.component.css']
 })
-export class BusinessHourItemComponent implements OnInit {
+export class PriceModelItemComponent implements OnInit {
   isEditing: boolean=true;
   editingStyle: string="background-color: transparent; border: 0;";
 

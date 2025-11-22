@@ -6,7 +6,7 @@ button {
     margin: 4px 2px;
     border-radius: 50px;
     box-shadow: 5px 5px 5px rgb(0,0,0,0.25);
-    /*positive (default) variation */
+    /*primary (default) variation */
     color: black;
     background-color: var(--orange-1);
     border: 1px solid black;
@@ -14,19 +14,27 @@ button {
     padding: 18px 0px;
 }
 
-/*positive (default) variation in hover: */
+/*primary (default) variation in hover: */
 button:hover {
-    width: 609 px;
     background-color: var(--orange-2);
 }
 
-button.negative {
+button.secondary {
     color: var(--dark-orange-1);
     background-color: var(--light-beige-1);
     border: 5px solid var(--orange-2);
 }
 
-button.negative:hover {
+button.secondary:hover {
     background-color: var(--beige-1);
 }
 
+
+button.tertiary {
+    width: 609px;
+    background-color: var(--light-beige-1);
+}
+
+button.tertiary:hover {
+    background-color: var(--orange-1);
+}
