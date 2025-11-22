@@ -9,6 +9,7 @@ import { TextInputFieldComponent } from './components/text-input-field/text-inpu
 import { MenuOptionComponent } from './components/menu-option/menu-option.component';
 import { UserHeaderComponent } from './components/user-header/user-header.component';
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
+import { BusinessHourItemComponent } from './components/business-hour-item/business-hour-item.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { AdminHeaderComponent } from './components/admin-header/admin-header.com
     TextInputFieldComponent,
     MenuOptionComponent,
     UserHeaderComponent,
-    AdminHeaderComponent
+    AdminHeaderComponent,
+    BusinessHourItemComponent
   ],
   imports: [
     BrowserModule,

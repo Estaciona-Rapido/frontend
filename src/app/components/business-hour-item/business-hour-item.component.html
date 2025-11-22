@@ -1,0 +1,21 @@
+<section>
+    <div class="checkbox">
+        <input type="checkbox">
+    </div>
+    <div class="infos">
+        <div class="week-period">
+            <input id="start-week" [disabled]="isEditing" [style]="editingStyle" [value]="">
+            <p>até</p>
+            <input id="end-week" [disabled]="isEditing" [style]="editingStyle" [value]="">
+        </div>
+        <div class="time-period">
+            <input id="start-time" type="time" [disabled]="isEditing" [style]="editingStyle" [value]="">
+            <p> até </p>
+            <input id="end-time" type="time" [disabled]="isEditing" [style]="editingStyle" [value]="">
+        </div>
+    </div>
+    <div class="actions">
+        <img id="edit-option" src="../../../assets/3rd-party/images/edit.png" (click)="changeToEditMode();">
+        <img id="delete-option" src="../../../assets/3rd-party/images/delete.png" onclick="alert('TODO');">
+    </div>
+    </section>
