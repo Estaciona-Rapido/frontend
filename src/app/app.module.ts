@@ -7,11 +7,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { ButtonComponent } from './components/button/button.component';
 import { TextInputFieldComponent } from './components/text-input-field/text-input-field.component';
 import { MenuOptionComponent } from './components/menu-option/menu-option.component';
-import { UserHeaderComponent } from './components/user-header/user-header.component';
-import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
+//import { UserHeaderComponent } from './components/user-header/user-header.component';
+//import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
 import { BusinessHourItemComponent } from './components/business-hour-item/business-hour-item.component';
 import { ConfigurationListComponent } from './components/configuration-list/configuration-list.component';
 import { PriceModelItemComponent } from './components/price-model-item/price-model-item.component';
+import { HomeComponent } from './pages/home/home.component';
+import { PanelComponent } from './components/panel/panel.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +22,13 @@ import { PriceModelItemComponent } from './components/price-model-item/price-mod
     ButtonComponent,
     TextInputFieldComponent,
     MenuOptionComponent,
-    UserHeaderComponent,
-    AdminHeaderComponent,
+    // UserHeaderComponent,
+    // AdminHeaderComponent,
     BusinessHourItemComponent,
     ConfigurationListComponent,
-    PriceModelItemComponent
+    PriceModelItemComponent,
+    HomeComponent,
+    PanelComponent
   ],
   imports: [
     BrowserModule,

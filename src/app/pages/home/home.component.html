@@ -1,0 +1,25 @@
+<app-header></app-header>
+<section class="home-body">
+    <app-panel [width]="1184" [height]="712">
+        <header>
+            <div>
+                <img src="../assets/3rd-party/images/schedule.png">
+                <input type="time" value="20:00" disabled class="home-context">
+            </div>
+            <div>
+                <img src="../assets/3rd-party/images/calendar.png">
+                <input type="date" value="11/10/2025" disabled class="home-context">
+            </div>
+        </header>
+        <section class="panel-body">
+            <div class="vehicle-info">
+                <app-text-input-field label="Nº da placa do veículo" [component_id]=1 placeholder="Placa do veículo"></app-text-input-field>
+                <p id="home-capacity">Capacidade atual do estacionamento: {{1}} de {{2}}</p>
+            </div>
+            <section class="home-buttons">
+                <app-button label="Cadastrar" variation="primary"></app-button>
+                <app-button label="Retirar" variation="secondary"></app-button>
+            </section>
+        </section>
+    </app-panel>
+</section>

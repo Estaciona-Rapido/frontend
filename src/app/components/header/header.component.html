@@ -6,9 +6,16 @@
     <nav>
         <div class="navigator">
             <img class="hamburguer" src="../../../assets/3rd-party/images/menu.png">
-            <menu>
-                <ng-content></ng-content>
+            <menu *ngIf="isInAdminRegion; else isInUserRegion">
+                <app-menu-option label="Configurações"></app-menu-option>
+                <app-menu-option label="Sair da Administração"></app-menu-option>
             </menu>
+            <ng-template #isInUserRegion>
+                <menu>
+                    <app-menu-option label="Histórico"></app-menu-option>
+                    <app-menu-option label="Administração"></app-menu-option>
+                </menu>
+            </ng-template>
         </div>
     </nav>
 </header>
