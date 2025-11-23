@@ -10,6 +10,7 @@ export class PanelComponent implements OnInit {
   @Input() variation= "primary";
   @Input() width: number = 1184;
   @Input() height: number = 712;
+  @Input() justify: string="";
   constructor() { }
 
   ngOnInit(): void {

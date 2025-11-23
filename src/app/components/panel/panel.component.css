@@ -20,6 +20,6 @@ section > * {
 
 .secondary {
     background-color: var(--light-light-beige-1);
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     border-radius: 20px;
 }

@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TextInputFieldComponent implements OnInit {
   @Input() component_id: number = 0;
   @Input() label: string = "Input de texto";
+  @Input() width: number = 988;
   @Input() placeholder: string = "Digite algo";
   // TODO: check if id is integer.
   input_type: string = "text";

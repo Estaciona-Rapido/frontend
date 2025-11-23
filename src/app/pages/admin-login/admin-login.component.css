@@ -1,0 +1,19 @@
+.admin-login-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 93vh;
+}
+
+.admin-login-buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.admin-login-title {
+    font-size: var(--medium-text);
+    margin: 0px;
+}
