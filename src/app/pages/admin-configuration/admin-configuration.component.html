@@ -1,0 +1,38 @@
+<app-header [isInAdminRegion]="true"></app-header>
+<section class="admin-configuration-body">
+<app-panel variation="configuration-major-panel" [width]="1806" [height]="894" justify="space-between">
+    <nav>
+        <button class="tabs" id="tab-1" (click)="tab=1">Regras</button>
+        <button class="tabs" id="tab-2" (click)="tab=2">Exceções</button>
+        <button class="tabs" id="tab-3" (click)="tab=3">Segurança de Conta</button>
+    </nav>
+    <div [ngSwitch]="this.tab" class="configuration-body">
+        <section *ngSwitchCase="1" class="rules-body">
+            <app-panel variation="configuration-panel" [width]="1678.5" [height]="110" flex-direction="row" justify="start">
+                <h3>Capacidade Máxima:</h3>
+                <input type="number" id="default-rule-capacity">
+                <p>veículos.</p>
+            </app-panel>
+            <div class="advanced-rules">
+                <app-configuration-list>
+                    <app-business-hour-item></app-business-hour-item>
+                </app-configuration-list>
+                <app-configuration-list>
+                    <app-price-model-item></app-price-model-item>
+                    <app-price-model-item></app-price-model-item>
+                    <app-price-model-item></app-price-model-item>
+                    <app-price-model-item></app-price-model-item>
+                    <app-price-model-item></app-price-model-item>
+                    <app-price-model-item></app-price-model-item>
+                    <app-price-model-item></app-price-model-item>
+                </app-configuration-list>
+            </div>
+            <div class="rules-buttons">
+                <app-button label="Salvar"></app-button>
+            </div>
+        </section>
+        <section *ngSwitchCase="2">ola</section>
+        <section *ngSwitchDefault>tchau</section>
+    </div>
+</app-panel>
+</section>

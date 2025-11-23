@@ -14,6 +14,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PanelComponent } from './components/panel/panel.component';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { HistoryComponent } from './pages/history/history.component';
+import { AdminConfigurationComponent } from './pages/admin-configuration/admin-configuration.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HistoryComponent } from './pages/history/history.component';
     HomeComponent,
     PanelComponent,
     AdminLoginComponent,
-    HistoryComponent
+    HistoryComponent,
+    AdminConfigurationComponent
   ],
   imports: [
     BrowserModule,

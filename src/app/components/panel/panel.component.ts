@@ -6,11 +6,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./panel.component.css']
 })
 export class PanelComponent implements OnInit {
-  // primary (default) and secondary variation
-  @Input() variation= "primary";
+  // default, configuration-list, item, configuration-major-panel and configuration-panel variants are avaliable. 
+  @Input() variation: string= "default";
   @Input() width: number = 1184;
   @Input() height: number = 712;
   @Input() justify: string="";
+  @Input('flex-direction') flex_direction: string = "column";
   constructor() { }
 
   ngOnInit(): void {

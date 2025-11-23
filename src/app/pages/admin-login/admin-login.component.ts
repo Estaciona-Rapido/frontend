@@ -9,6 +9,10 @@ export class AdminLoginComponent implements OnInit {
 
   constructor() { }
 
+  signin() {
+    
+  }
+
   ngOnInit(): void {
   }
 

@@ -4,7 +4,7 @@
         <h2 class="admin-login-title">Entrar como Administrador</h2>
         <app-text-input-field label="Senha" [component_id]=1  placeholder="Senha" variation="password"></app-text-input-field>
         <section class="admin-login-buttons">
-            <app-button label="Entrar" variation="primary"></app-button>
+            <app-button label="Entrar" variation="primary" (click)="signin()" routerLink="/admin/configuration"></app-button>
             <app-button label="Cancelar" variation="secondary" routerLink="/home"></app-button>
         </section>
     </app-panel>

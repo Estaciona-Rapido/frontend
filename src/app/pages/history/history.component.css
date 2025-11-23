@@ -12,7 +12,7 @@
 
 .table-container {
     width: 90%;
-    height: 60%;
+    height: 80%;
 }
 
 table {
@@ -37,7 +37,7 @@ tr:nth-child(even) {
 }
 
 thead, tbody {
-    font-size: var(--medium-text);
+    font-size: var(--small-text);
 }
 
 thead {
