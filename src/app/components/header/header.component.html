@@ -1,19 +1,19 @@
 <header>
-    <div class="left-header">
+    <div class="left-header" [routerLink]="home_link">
         <img class="logo" src="../../../assets/logo.png">
         <h1>Estaciona Rápido</h1>
     </div>
     <nav>
         <div class="navigator">
             <img class="hamburguer" src="../../../assets/3rd-party/images/menu.png">
-            <menu *ngIf="isInAdminRegion; else isInUserRegion">
-                <app-menu-option label="Configurações"></app-menu-option>
-                <app-menu-option label="Sair da Administração"></app-menu-option>
+            <menu *ngIf="_isInAdminRegion; else isInUserRegion">
+                <app-menu-option label="Configurações" routerLink="/admin/configuration"></app-menu-option>
+                <app-menu-option label="Sair da Administração" routerLink="/home"></app-menu-option>
             </menu>
             <ng-template #isInUserRegion>
                 <menu>
-                    <app-menu-option label="Histórico"></app-menu-option>
-                    <app-menu-option label="Administração" routerLink="/admin-login"></app-menu-option>
+                    <app-menu-option label="Histórico" routerLink="/history"></app-menu-option>
+                    <app-menu-option label="Administração" routerLink="/admin/login"></app-menu-option>
                 </menu>
             </ng-template>
         </div>

@@ -13,6 +13,7 @@ import { PriceModelItemComponent } from './components/price-model-item/price-mod
 import { HomeComponent } from './pages/home/home.component';
 import { PanelComponent } from './components/panel/panel.component';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
+import { HistoryComponent } from './pages/history/history.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
     PriceModelItemComponent,
     HomeComponent,
     PanelComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

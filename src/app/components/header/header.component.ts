@@ -6,7 +6,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input() isInAdminRegion: boolean = false;
+  home_link: string="/home"
+  @Input() set isInAdminRegion(value: boolean) {
+    this.home_link = (value ? "/admin/home":"/home");
+    this._isInAdminRegion = value;
+  }
+  _isInAdminRegion: boolean=false;
   constructor() { }
 
   ngOnInit(): void {
