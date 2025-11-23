@@ -8,13 +8,21 @@ import { Component, Input, OnInit } from '@angular/core';
 export class TextInputFieldComponent implements OnInit {
   @Input() component_id: number = 0;
   @Input() label: string = "Input de texto";
-  @Input() width: number = 988;
   @Input() placeholder: string = "Digite algo";
   // TODO: check if id is integer.
   input_type: string = "text";
-  @Input("is-password") set setHiddenInput(value: boolean) {
-    if (value) {
+  width: number = 988;
+  input_font_size: string= "var(--big-text)";
+  // plate (default) and password variants are avaliable
+  @Input("variation") set setVariantion(value: string) {
+    if (value === "password") {
       this.input_type = "password";
+      this.width = 842;
+      this.input_font_size = "var(--small-text)";
+    } else {
+      this.input_type = "text";
+      this.width = 988;
+      this.input_font_size = "var(--big-text)";
     }
   }
   

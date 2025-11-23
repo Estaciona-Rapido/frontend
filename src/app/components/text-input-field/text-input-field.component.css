@@ -6,6 +6,7 @@
 
 label {
     font-size: var(--small-text);
+    margin: 5px 0px;
 }
 
 input {
