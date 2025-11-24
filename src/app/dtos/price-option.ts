@@ -3,5 +3,5 @@ export interface PriceOption {
     name: string,
     frequencyValue: number,
     frequencyType: string,
-    value: bigint
+    value: number
 }

@@ -24,12 +24,32 @@ export class HomeComponent implements OnInit {
     this.service.getCurrentScenario().subscribe((currentScenario) => {
       this.currentScenario = currentScenario;
     });
+    
     this.service.getOccupancy().subscribe((occupancy) => {
       this.occupancy = occupancy;
     });
   }
+
   prepareRegister(){
-    this.state = 1;
+    if (!this.currentScenario.open) {
+      const modal: any = document.getElementById('closed-modal');
+      if (modal)
+        modal.showModal();
+      else
+        console.error("No modal for closed parking found");
+    } else if (this.occupancy >= this.currentScenario.capacity) {
+      const modal: any = document.getElementById('exceeded-modal');
+      if (modal)
+        modal.showModal();
+      else
+        console.error("No modal for exceeded capacity found");
+    } else {
+      this.state = 1;
+    }
+  }
+
+  cancelRegister() {
+    this.state=0;
   }
 
   register(){

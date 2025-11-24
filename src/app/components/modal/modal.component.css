@@ -1,12 +1,18 @@
 /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/:modal */
 
-:modal {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+dialog:modal {
     background-color: var(--light-beige-1);
     border: 0;
     box-shadow: 11px 14px 9.2px 0px rgb(0, 0, 0, 0.25);
     border-radius: 70px;
+}
+
+
+dialog:modal > form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
