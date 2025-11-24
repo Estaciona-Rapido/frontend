@@ -27,12 +27,52 @@
                     <app-price-model-item></app-price-model-item>
                 </app-configuration-list>
             </div>
-            <div class="rules-buttons">
+            <div class="configuration-state-buttons">
                 <app-button label="Salvar"></app-button>
             </div>
         </section>
-        <section *ngSwitchCase="2">ola</section>
-        <section *ngSwitchDefault>tchau</section>
+        <section *ngSwitchCase="2" class="exceptions-body">
+            <app-panel variation="configuration-panel" [width]="1678.5" [height]="110" flex-direction="row" justify="start">
+                <h3>Motorista de passagem:</h3>
+                <div class="default-rule-tolerance-container">
+                    <p>até</p>
+                    <input type="number" id="default-rule-tolerance">
+                    <p>veículos.</p>
+                </div>
+            </app-panel>
+            <app-panel variation="configuration-panel" [width]="1678.5" [height]="427" flex-direction="row" justify="start">
+
+            </app-panel>
+            <div class="configuration-state-buttons">
+                <app-button label="Salvar"></app-button>
+            </div>
+        </section>
+        <section *ngSwitchDefault class="security-body">
+            <app-panel variation="configuration-panel" [width]="1678.5" [height]="110" flex-direction="row" justify="start">
+                <h3>Número máximo de tentativas de login erradas</h3>
+                <input type="number" id="default-rule-tolerance">
+            </app-panel>
+            <app-panel variation="configuration-panel" [width]="1678.5" [height]="427" flex-direction="column" justify="start">
+                <h3>Trocar Senha</h3>
+                <form class="password-fields">
+                    <section>
+                        <label for="actual-password">Senha atual</label>
+                        <input type="password" id="actual-password" name="actual-password" placeholder="********">
+                    </section>
+                    <section>
+                        <label for="new-password">Nova senha</label>
+                        <input type="password" id="new-password" name="new-password" placeholder="********">
+                    </section>
+                    <section>
+                        <label for="confirm-new-password">Confirmar nova senha</label>
+                        <input type="password" id="confirm-new-password" name="confirm-new-password" placeholder="********">
+                    </section>
+                </form>
+            </app-panel>
+            <div class="configuration-state-buttons">
+                <app-button label="Salvar"></app-button>
+            </div>
+        </section>
     </div>
 </app-panel>
 </section>

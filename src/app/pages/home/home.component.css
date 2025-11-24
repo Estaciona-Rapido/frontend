@@ -60,3 +60,38 @@ header > div {
     color: var(--orange-1);
 }
 
+table {
+    background-color: var(--yellow-1);
+    width: 70%;
+    height: 30%;
+    border-radius: 8px;
+    box-shadow: 0px 2px 18.3px 1px rgb(0, 0, 0, 0.25);
+}
+
+tr {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+  background-color: rgb(0, 0, 0, 0.08);
+}
+
+tbody {
+    font-size: var(--small-text);
+}
+
+h2 {
+    font-size: var(--big-text);
+    font-weight: normal;
+    margin: 0;
+}
+
+.total-cost {
+    font-size: var(--gigant-text);
+    font-weight: bold;
+    color: var(--orange-1);
+}
+
+.exceded-modal-text {
+    font-size: var(--small-text);
+}

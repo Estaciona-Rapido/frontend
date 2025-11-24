@@ -1,6 +1,6 @@
 <app-header></app-header>
-<section class="home-body">
-    <app-panel [width]="1184" [height]="712">
+<section class="home-body" [ngSwitch]="state">
+    <app-panel *ngSwitchCase="0" [width]="1184" [height]="712">
         <header>
             <div>
                 <img src="../assets/3rd-party/images/schedule.png">
@@ -17,9 +17,51 @@
                 <p id="home-capacity">Capacidade atual do estacionamento: <b class="home-changing-values">{{1}}</b> de <b class="home-changing-values">{{2}}</b></p>
             </div>
             <section class="home-buttons">
-                <app-button label="Cadastrar" variation="primary"></app-button>
+                <app-button label="Cadastrar" variation="primary" (click)="prepareRegister()"></app-button>
                 <app-button label="Retirar" variation="secondary"></app-button>
             </section>
         </section>
     </app-panel>
+
+    <app-panel *ngSwitchCase="1" [width]="1200" [height]="643" justify="space-evenly">
+        <h2>Escolha o modelo de cobrança</h2>
+        <table>
+            <tbody>
+                <tr>
+                    <td><input type="radio" checked></td>
+                    <td>Horista</td>
+                    <td>R$4,00</td>
+                    <td>por hora</td>
+                </tr>
+                <tr>
+                    <td><input type="radio"></td>
+                    <td>Horista</td>
+                    <td>R$4,00</td>
+                    <td>por hora</td>
+                </tr>
+                <tr>
+                    <td><input type="radio"></td>
+                    <td>Horista</td>
+                    <td>R$4,00</td>
+                    <td>por hora</td>
+                </tr>
+            </tbody>
+        </table>
+        <section class="home-buttons">
+            <app-button label="Cadastrar" variation="primary" (click)="register()"></app-button>
+            <app-button label="Cancelar" variation="secondary"></app-button>
+        </section>
+    </app-panel>
 </section>
+<app-modal dialog-id="exceded-modal" [width]="515" [height]="301">
+    <p class="exceded-modal-text">Capacidade excedida</p>
+    <app-button label="Ok!"></app-button>
+</app-modal>
+<app-modal dialog-id="total-modal">
+    <h2>Valor a ser Pago</h2>
+    <p class="total-cost">R$25,00</p>
+    <section class="home-buttons">
+        <app-button label="Confirmar Pagamento" variation="primary"></app-button>
+        <app-button label="Cancelar" variation="secondary"></app-button>
+    </section>
+</app-modal>

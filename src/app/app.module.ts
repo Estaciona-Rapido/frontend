@@ -15,6 +15,7 @@ import { PanelComponent } from './components/panel/panel.component';
 import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { AdminConfigurationComponent } from './pages/admin-configuration/admin-configuration.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AdminConfigurationComponent } from './pages/admin-configuration/admin-c
     PanelComponent,
     AdminLoginComponent,
     HistoryComponent,
-    AdminConfigurationComponent
+    AdminConfigurationComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
