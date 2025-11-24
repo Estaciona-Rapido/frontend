@@ -16,6 +16,7 @@ import { AdminLoginComponent } from './pages/admin-login/admin-login.component';
 import { HistoryComponent } from './pages/history/history.component';
 import { AdminConfigurationComponent } from './pages/admin-configuration/admin-configuration.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ModalComponent } from './components/modal/modal.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

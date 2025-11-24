@@ -14,7 +14,7 @@
         <section class="panel-body">
             <div class="vehicle-info">
                 <app-text-input-field label="Nº da placa do veículo" [component_id]=1 placeholder="Placa do veículo"></app-text-input-field>
-                <p id="home-capacity">Capacidade atual do estacionamento: <b class="home-changing-values">{{1}}</b> de <b class="home-changing-values">{{2}}</b></p>
+                <p id="home-capacity">Capacidade atual do estacionamento: <b class="home-changing-values">{{this.occupancy}}</b> de <b class="home-changing-values">{{this.currentScenario.capacity}}</b></p>
             </div>
             <section class="home-buttons">
                 <app-button label="Cadastrar" variation="primary" (click)="prepareRegister()"></app-button>
