@@ -4,12 +4,12 @@
     align-items: start;
 }
 
-label {
+.text-input-field > label {
     font-size: var(--small-text);
     margin: 5px 0px;
 }
 
-input {
+.text-input-field > input {
     background-color: var(--yellow-1);
     border-radius: 8px;
     border: 2px solid var(--gray-1);

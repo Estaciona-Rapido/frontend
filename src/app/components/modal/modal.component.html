@@ -1,4 +1,4 @@
-<dialog [id]="dialog_id" [ngStyle]="{'width.px': width, 'height.px': height}">
+<dialog #dlg [ngStyle]="{'width.px': width, 'height.px': height}">
     <form method="dialog">
         <ng-content></ng-content>
     </form>

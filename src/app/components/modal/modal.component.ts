@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -14,5 +14,16 @@ export class ModalComponent implements OnInit {
   
   ngOnInit(): void {
   }
+
+  @ViewChild('dlg') dialog!: ElementRef<any>;
+
+  open() {
+    this.dialog.nativeElement.showModal();
+  }
+
+  close() {
+    this.dialog.nativeElement.close();
+  }
+
 
 }

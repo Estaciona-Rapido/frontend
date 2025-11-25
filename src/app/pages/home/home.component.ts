@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HomeService } from './home.service';
 import { Scenario } from 'src/app/dtos/scenario';
+import { ParkingRegisterProposal } from 'src/app/dtos/parking-register-proposal';
+import { HttpErrorResponse } from '@angular/common/http';
+import { ModalComponent } from 'src/app/components/modal/modal.component';
 
 @Component({
   selector: 'app-home',
@@ -17,6 +20,21 @@ export class HomeComponent implements OnInit {
     prices: []
   };
   occupancy: bigint=BigInt(-1);
+  plate: string="";
+  parkingRegisterProposal: ParkingRegisterProposal = {
+    plate: "",
+    priceModelId: -1
+  };
+  priceModelIdSelected: number=-1;
+
+
+  @ViewChild('successModal') successModal!: ModalComponent;
+  @ViewChild('errorModal') errorModal!: ModalComponent;
+  @ViewChild('exceededModal') exceededModal!: ModalComponent;
+  @ViewChild('closedModal') closedModal!: ModalComponent;
+  @ViewChild('totalModal') totalModal!: ModalComponent;
+
+
 
   constructor(private service: HomeService) { }
 
@@ -32,30 +50,41 @@ export class HomeComponent implements OnInit {
 
   prepareRegister(){
     if (!this.currentScenario.open) {
-      const modal: any = document.getElementById('closed-modal');
-      if (modal)
-        modal.showModal();
-      else
-        console.error("No modal for closed parking found");
+      this.closedModal.open();
     } else if (this.occupancy >= this.currentScenario.capacity) {
-      const modal: any = document.getElementById('exceeded-modal');
-      if (modal)
-        modal.showModal();
-      else
-        console.error("No modal for exceeded capacity found");
+      this.exceededModal.open();
     } else {
       this.state = 1;
     }
+  }
+
+  seekPriceOptionSelected(event: any){
+    this.priceModelIdSelected = event.target.value;
   }
 
   cancelRegister() {
     this.state=0;
   }
 
-  register(){
-    const modal: any = document.getElementById('total-modal');
-    if (modal) {
-      modal.showModal();
-    }
+  register() {
+    this.parkingRegisterProposal.plate = this.plate;
+    this.parkingRegisterProposal.priceModelId = this.priceModelIdSelected;
+    this.service.register(this.parkingRegisterProposal).subscribe((response) => {
+      this.successModal.open();
+    }, (error: HttpErrorResponse) => {
+      if (error.status == 400) {
+        this.errorModal.open();
+      }
+    });
+  }
+
+  checkout(){
+    this.totalModal.open();
+  }
+
+  resetHome(){
+    this.successModal.close();
+    this.state=0;
+    this.plate='';
   }
 }

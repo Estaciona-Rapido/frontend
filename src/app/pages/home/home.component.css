@@ -28,6 +28,28 @@ header > div {
     height: 100%;
 }
 
+.plate-field {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.plate-field > label {
+    font-size: var(--small-text);
+    margin: 5px 0px;
+}
+
+.plate-field > input {
+    width: 988px;
+    font-size: var(--big-text);
+    background-color: var(--yellow-1);
+    border-radius: 8px;
+    border: 2px solid var(--gray-1);
+    font-size: var(--big-text);
+    padding: 20px 28px;
+    box-shadow: 0px 3px 4.4px rgb(0, 0, 0, 0.25);
+}
+
 .vehicle-info {
     display: flex;
     align-items: center;
@@ -92,6 +114,6 @@ h2 {
     color: var(--orange-1);
 }
 
-.exception-text {
+.exception-text, .success-text {
     font-size: var(--small-text);
 }

@@ -13,12 +13,21 @@
         </header>
         <section class="panel-body">
             <div class="vehicle-info">
-                <app-text-input-field label="Nº da placa do veículo" [component_id]=1 placeholder="Placa do veículo"></app-text-input-field>
+                <div class="plate-field">
+                    <label for="plate-input"> Nº da placa do veículo</label>
+                    <input
+                        type="text"
+                        placeholder="Placa do veículo"
+                        id="plate-input"
+                        [(ngModel)]="this.plate"
+                    >
+                </div>
+                <!-- <app-text-input-field label="Nº da placa do veículo" [component_id]=1 placeholder="Placa do veículo"></app-text-input-field> -->
                 <p id="home-capacity">Capacidade atual do estacionamento: <b class="home-changing-values">{{this.occupancy}}</b> de <b class="home-changing-values">{{this.currentScenario.capacity}}</b></p>
             </div>
             <section class="home-buttons">
                 <app-button label="Cadastrar" variation="primary" (click)="prepareRegister()"></app-button>
-                <app-button label="Retirar" variation="secondary"></app-button>
+                <app-button label="Retirar" variation="secondary" (click)="checkout()"></app-button>
             </section>
         </section>
     </app-panel>
@@ -28,7 +37,7 @@
         <table>
             <tbody>
                 <tr *ngFor="let priceOption of currentScenario.prices">
-                    <td><input type="radio"></td>
+                    <td><input type="radio" name="radio" [value]="priceOption.id" (change)="seekPriceOptionSelected($event)"></td>
                     <td>{{priceOption.name}}</td>
                     <td>R${{priceOption.value}}</td>
                     <td>por cada {{priceOption.frequencyValue}} {{priceOption.frequencyType}}(s).</td>
@@ -42,17 +51,27 @@
     </app-panel>
 </section>
 
-<app-modal dialog-id="exceeded-modal" [width]="515" [height]="301">
+<app-modal #successModal [width]="515" [height]="301">
+    <p class="success-text">Sucesso!</p>
+    <app-button label="Ok!" (click)="resetHome()"></app-button>
+</app-modal>
+
+<app-modal #errorModal [width]="515" [height]="301">
+    <p class="exception-text">Placa <b>NÃO</b> cadastrada!</p>
+    <app-button label="Ok!" (click)="errorModal.close()"></app-button>
+</app-modal>
+
+<app-modal #exceededModal [width]="515" [height]="301">
     <p class="exception-text">Capacidade excedida</p>
-    <app-button label="Ok!"></app-button>
+    <app-button label="Ok!" (click)="exceededModal.close()"></app-button>
 </app-modal>
 
-<app-modal dialog-id="closed-modal" [width]="515" [height]="301">
+<app-modal #closedModal [width]="515" [height]="301">
     <p class="exception-text">Estacionamento fechado</p>
-    <app-button label="Ok!"></app-button>
+    <app-button label="Ok!" (click)="closedModal.close()"></app-button>
 </app-modal>
 
-<app-modal dialog-id="total-modal">
+<app-modal #totalModal>
     <h2>Valor a ser Pago</h2>
     <p class="total-cost">R$25,00</p>
     <section class="home-buttons">
