@@ -53,7 +53,7 @@
 
 <app-modal #successModal [width]="515" [height]="301">
     <p class="success-text">Sucesso!</p>
-    <app-button label="Ok!" (click)="resetHome()"></app-button>
+    <app-button label="Ok!" (click)="resetHome(this.successModal)"></app-button>
 </app-modal>
 
 <app-modal #errorModal [width]="515" [height]="301">
@@ -73,9 +73,9 @@
 
 <app-modal #totalModal>
     <h2>Valor a ser Pago</h2>
-    <p class="total-cost">R$25,00</p>
+    <p class="total-cost">R$ {{totalPrice}}</p>
     <section class="home-buttons">
-        <app-button label="Confirmar Pagamento" variation="primary"></app-button>
-        <app-button label="Cancelar" variation="secondary"></app-button>
+        <app-button label="Confirmar Pagamento" variation="primary" (click)="confirmCheckout()"></app-button>
+        <app-button label="Cancelar" variation="secondary" (click)="resetHome(this.totalModal)"></app-button>
     </section>
 </app-modal>

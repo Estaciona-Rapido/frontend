@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
     priceModelId: -1
   };
   priceModelIdSelected: number=-1;
+  totalPrice: number=-1;
 
 
   @ViewChild('successModal') successModal!: ModalComponent;
@@ -69,21 +70,50 @@ export class HomeComponent implements OnInit {
   register() {
     this.parkingRegisterProposal.plate = this.plate;
     this.parkingRegisterProposal.priceModelId = this.priceModelIdSelected;
-    this.service.register(this.parkingRegisterProposal).subscribe((response) => {
-      this.successModal.open();
-    }, (error: HttpErrorResponse) => {
-      if (error.status == 400) {
+    this.service.register(this.parkingRegisterProposal).subscribe({
+      next: (response) => {
+        this.successModal.open();
+      },
+      error: (error: HttpErrorResponse) => {
+        //if (error.status == 400) {
         this.errorModal.open();
+        //}
+        // TODO: treat errors by status
       }
     });
   }
 
   checkout(){
-    this.totalModal.open();
+    this.service.checkout(this.plate).subscribe({
+      next: (totalPrice) => {
+        this.totalPrice = totalPrice;
+        this.totalModal.open();
+      },
+      error: (error: HttpErrorResponse) => {
+        this.closedModal.open();
+        // TODO: treat errors by status
+      }
+    });
   }
 
-  resetHome(){
-    this.successModal.close();
+  confirmCheckout() {
+    this.service.confirmCheckout(this.plate).subscribe({
+      next: (emptyBody) => {
+        this.totalModal.close();
+        this.successModal.open();
+      },
+      error: (error: HttpErrorResponse) => {
+        this.totalModal.close();
+        this.closedModal.open();
+        // TODO: treat errors by status
+      }
+    });
+  }
+
+  resetHome(modalToClose: ModalComponent | null){
+    if (modalToClose) {
+      modalToClose.close();
+    }
     this.state=0;
     this.plate='';
   }

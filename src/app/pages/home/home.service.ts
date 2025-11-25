@@ -22,4 +22,12 @@ export class HomeService {
   register(parkingRegisterProposal: ParkingRegisterProposal): Observable<HttpResponse<Object>>  {
     return this.http.post(environment.apiURL+"/parking/register", parkingRegisterProposal, {observe: "response"});
   }
+
+  checkout(plate: string): Observable<number> {
+    return this.http.post<number>(environment.apiURL+"/parking/checkout" + "?" + "plate=" + plate, null);
+  }
+
+  confirmCheckout(plate: string): Observable<Object> {
+    return this.http.post(environment.apiURL+"/parking/confirmCheckout" + '?' + "plate=" + plate, null);
+  }
 }
