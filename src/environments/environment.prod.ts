@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiURL: "" //TODO: 
+  apiURL: "", //TODO:
+  authURL: ""
 };

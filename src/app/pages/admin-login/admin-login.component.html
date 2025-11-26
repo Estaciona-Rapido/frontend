@@ -2,10 +2,19 @@
 <section class="admin-login-body">
     <app-panel [width]="990" [height]="535" justify="space-evenly">
         <h2 class="admin-login-title">Entrar como Administrador</h2>
-        <app-text-input-field label="Senha" [component_id]=1  placeholder="Senha" variation="password"></app-text-input-field>
+        <div class="password-field">
+            <label for="password-input">Senha</label>
+            <input
+                type="password"
+                placeholder="********"
+                id="password-input"
+                [(ngModel)] = "this.password"
+            >
+        </div>
+        <!-- <app-text-input-field label="Senha" [component_id]=1  placeholder="Senha" variation="password"></app-text-input-field> -->
         <section class="admin-login-buttons">
-            <app-button label="Entrar" variation="primary" (click)="signin()" routerLink="/admin/configuration"></app-button>
-            <app-button label="Cancelar" variation="secondary" routerLink="/home"></app-button>
+            <app-button label="Entrar" variation="primary" (click)="signin()"></app-button>
+            <app-button label="Cancelar" variation="secondary"></app-button>
         </section>
     </app-panel>
 </section>

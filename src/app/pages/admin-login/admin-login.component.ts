@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminLoginService } from './admin-login.service';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-login',
@@ -6,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent implements OnInit {
-
-  constructor() { }
+  password: string="";
+  constructor(private service: AdminLoginService, private router: Router) { }
 
   signin() {
-    
+    this.service.adminLogin(this.password).subscribe({
+      next: (jwt) => {
+        console.log("chegou aqui");
+        window.localStorage.setItem("admin", jwt);
+        this.router.navigate(["/admin/configuration"]);
+      }
+    });
   }
 
   ngOnInit(): void {
