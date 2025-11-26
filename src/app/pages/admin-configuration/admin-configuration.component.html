@@ -10,14 +10,14 @@
         <section *ngSwitchCase="1" class="rules-body">
             <app-panel variation="configuration-panel" [width]="1678.5" [height]="110" flex-direction="row" justify="start">
                 <h3>Capacidade Máxima:</h3>
-                <input type="number" id="default-rule-capacity">
+                <input type="number" id="default-rule-capacity" [(ngModel)]="this.defaultScenarioNew.capacity">
                 <p>veículos.</p>
             </app-panel>
             <div class="advanced-rules">
-                <app-configuration-list>
-                    <app-business-hour-item></app-business-hour-item>
+                <app-configuration-list label="Horário de Funcionamento" [add]="defaultScenarioBusinessHourAdd">
+                    <app-business-hour-item #defaultBusinessHour *ngFor="let businessHour of defaultScenarioNew.businessHours" [businessHour]="businessHour" [deleteComponent]="defaultScenarioBusinessHourDelete(businessHour.id)"></app-business-hour-item>
                 </app-configuration-list>
-                <app-configuration-list>
+                <app-configuration-list label="Preço">
                     <app-price-model-item></app-price-model-item>
                     <app-price-model-item></app-price-model-item>
                     <app-price-model-item></app-price-model-item>
@@ -28,7 +28,7 @@
                 </app-configuration-list>
             </div>
             <div class="configuration-state-buttons">
-                <app-button label="Salvar"></app-button>
+                <app-button label="Salvar" (click)="defaultScenarioSave()"></app-button>
             </div>
         </section>
         <section *ngSwitchCase="2" class="exceptions-body">

@@ -1,8 +1,8 @@
 <app-panel variation="configuration-panel" [width]="810" [height]="453">
-    <h3>H</h3>
+    <h3>{{label}}</h3>
     <div class="internal-window">
         <!-- list -->
         <ng-content></ng-content>
     </div>
-    <app-button label="+" variation="tertiary"></app-button>
+    <app-button label="+" variation="tertiary" (click)="add()"></app-button>
 </app-panel>

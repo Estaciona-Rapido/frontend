@@ -14,7 +14,6 @@ export class AdminLoginComponent implements OnInit {
   signin() {
     this.service.adminLogin(this.password).subscribe({
       next: (jwt) => {
-        console.log("chegou aqui");
         window.localStorage.setItem("admin", jwt);
         this.router.navigate(["/admin/configuration"]);
       }

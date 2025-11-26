@@ -1,21 +1,40 @@
 <section>
     <div class="checkbox">
-        <input type="checkbox">
+        <input type="checkbox" [(ngModel)]="this.businessHour.isActivated">
     </div>
     <div class="info">
         <div class="week-period">
-            <input id="start-week" [disabled]="isEditing" [style]="editingStyle" [value]="">
+            <!-- <input id="start-week" [disabled]="isEditing" [style]="editingStyle" [value]="">
             <p>até</p>
-            <input id="end-week" [disabled]="isEditing" [style]="editingStyle" [value]="">
+            <input id="end-week" [disabled]="isEditing" [style]="editingStyle" [(ngModel)]="this.businessHour.endWeekDay"> -->
+            <select [(ngModel)]="this.businessHour.startWeekDay" [disabled]="isEditing" [style]="editingStyle">
+                <option [ngValue]="1">Segunda</option>
+                <option [ngValue]="2">Terça</option>
+                <option [ngValue]="3">Quarta</option>
+                <option [ngValue]="4">Quinta</option>
+                <option [ngValue]="5">Sexta</option>
+                <option [ngValue]="6">Sábado</option>
+                <option [ngValue]="7">Domingo</option>
+            </select>
+            <select [(ngModel)]="this.businessHour.endWeekDay" [disabled]="isEditing" [style]="editingStyle">
+                <option [ngValue]="1">Segunda</option>
+                <option [ngValue]="2">Terça</option>
+                <option [ngValue]="3">Quarta</option>
+                <option [ngValue]="4">Quinta</option>
+                <option [ngValue]="5">Sexta</option>
+                <option [ngValue]="6">Sábado</option>
+                <option [ngValue]="7">Domingo</option>
+            </select>
+
         </div>
         <div class="time-period">
-            <input id="start-time" type="time" [disabled]="isEditing" [style]="editingStyle" [value]="">
+            <input id="start-time" type="time" [disabled]="isEditing" [style]="editingStyle" [(ngModel)]="this.businessHour.startTime">
             <p> até </p>
-            <input id="end-time" type="time" [disabled]="isEditing" [style]="editingStyle" [value]="">
+            <input id="end-time" type="time" [disabled]="isEditing" [style]="editingStyle" [(ngModel)]="this.businessHour.endTime">
         </div>
     </div>
     <div class="actions">
         <img id="edit-option" src="../../../assets/3rd-party/images/edit.png" (click)="changeToEditMode();">
-        <img id="delete-option" src="../../../assets/3rd-party/images/delete.png" onclick="alert('TODO');">
+        <img id="delete-option" src="../../../assets/3rd-party/images/delete.png" (click)="deleteComponent()">
     </div>
     </section>

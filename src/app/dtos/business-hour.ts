@@ -1,4 +1,4 @@
-export interface BusinessHourItem {
+export interface BusinessHour {
     id: bigint,
     isActivated: boolean,
     startWeekDay: number,

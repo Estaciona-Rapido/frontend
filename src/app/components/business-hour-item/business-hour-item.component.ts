@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BusinessHourItemService } from './business-hour-item.service';
+import { BusinessHour } from 'src/app/dtos/business-hour';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-business-hour-item',
@@ -8,9 +11,21 @@ import { Component, Input, OnInit } from '@angular/core';
 export class BusinessHourItemComponent implements OnInit {
   isEditing: boolean=true;
   editingStyle: string="background-color: transparent; border: 0;";
+  @Input() businessHour: BusinessHour = {
+    id: BigInt(-1),
+    isActivated: false,
+    startWeekDay: 1,
+    endWeekDay: 1,
+    startTime: "10:00",
+    endTime: "20:00"
+  };
+  @Input() deleteComponent!: () => any;
 
-  constructor() { }
+  constructor(private service: BusinessHourItemService) { }
 
+  ngOnInit() {
+
+  }
   changeToEditMode () {
     if (this.isEditing) {
       this.isEditing = false;
@@ -21,7 +36,14 @@ export class BusinessHourItemComponent implements OnInit {
       this.editingStyle = "background-color: transparent; border: 0;"
     }
   }
-  ngOnInit(): void {
+
+  postBusinessHourAtDefaultScenario(): Observable<Object> {
+    let {id, ...businessHourProposal} = this.businessHour;
+    return this.service.createBusinessHourAtDefaultScenario(businessHourProposal);
   }
 
+  setBusinessHourAtDefaultScenario(): Observable<Object> {
+    let {id, ...businessHourProposal} = this.businessHour
+    return this.service.setBusinessHourAtDefaultScenario(id, businessHourProposal);
+  }
 }

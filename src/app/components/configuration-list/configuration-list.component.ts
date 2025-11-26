@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-configuration-list',
@@ -6,9 +6,10 @@ import { Component, OnInit, Output } from '@angular/core';
   styleUrls: ['./configuration-list.component.css']
 })
 export class ConfigurationListComponent implements OnInit {
-  constructor() { }
+  @Input() label: string = "";
+  @Input() add: () => any = () => alert("Carregando");
+  constructor() {}
 
   ngOnInit(): void {
   }
-
 }

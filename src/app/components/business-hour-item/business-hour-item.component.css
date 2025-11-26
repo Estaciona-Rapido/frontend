@@ -40,11 +40,11 @@ section * {
     justify-content: space-between;
 }
 
-#start-week, #end-week {
+select {
     width: 90px;
 }
 
-.info input {
+.info input, .info select {
     border: 0;
     background-color: transparent;
 }
@@ -53,6 +53,6 @@ section * {
     cursor: pointer;
 }
 
-.info input:disabled {
+.info input:disabled, .info select:disabled {
     color: black;
 }
